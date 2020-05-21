@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>techflow sample</title>
+</head>
+<style type="text/css">
+    .context{
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom:0;
+        width: 20vw;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .context>div{
+        background-color: rgba(174, 245, 221, 0.78);
+        margin:5px;
+        flex: 0 1 33%;
+        border-radius: 15px;
+        padding: 15px;
+        overflow: auto;
+    }
+    .goodies{
+        z-index: 3;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+<body>
+    <div class="context">
+        <div class="context__top">
+            <h3>click</h3>
+            <div class="node-clicked"></div>
+        </div>
+        <div class="context__middle">
+            <h3>hover</h3>
+            <div class="node-hover"></div>
+        </div>
+    </div>
+    <div class="goodies"></div>
+</body>
+</html>
+<script src="techflow.js"></script>
+<script type="text/javascript">
+    const loadJSON = (path) => {
+        return new Promise((resolve, reject)=>{
+            const xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', path, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    resolve(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        });
+    }
+    const nodeClicked = document.querySelector('.node-clicked');
+    const nodeHover = document.querySelector('.node-hover');
+    const goodies = document.querySelector('.goodies');
+
+    const onHover = (data)=>{
+        nodeHover.innerHTML = JSON.stringify(data,null,2)
+    }
+    const onClick = (data)=>{
+        nodeClicked.innerHTML = JSON.stringify(data,null,2)
+    }
+
+    loadJSON('sampleData.json')
+        .then((data)=>{
+            techflow.go(goodies, JSON.parse(data), onClick, onHover);
+        })
+
+</script>

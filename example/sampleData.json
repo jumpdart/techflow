@@ -1,0 +1,106 @@
+{
+  "employers": {
+    "coolCo": {
+      "alias": "Cool Company",
+      "months": 27,
+      "projectMonths": {
+        "puppyTracker" : 20,
+        "hax": 7
+      }
+    },
+    "funJo": {
+      "alias": "Fun Job",
+      "months": 15,
+      "projectMonths": {
+        "myFacebook": 15
+      }
+    }
+  },
+  "projects": {
+    "puppyTracker": {
+      "alias": "Puppy Tracker Pro",
+      "tech": [
+        "react",
+        "express",
+        "mysql"
+      ]
+    },
+    "myFacebook": {
+      "alias": "Social Frenz",
+      "tech": [
+        "react",
+        "express",
+        "mongo"
+      ]
+    },
+    "hax" : {
+      "alias": "Supper Sweet Hacking Tool",
+      "tech": [
+        "angularJs",
+        "django",
+        "mysql"
+      ]
+    }
+  },
+  "tech": {
+    "react": {
+      "alias" : "react js",
+      "links": {
+        "devLang": ["js"],
+        "skill": ["fed"]
+      }
+    },
+    "angularJs": {
+      "alias" : "angular js",
+      "links": {
+        "devLang": ["js"],
+        "skill": ["fed"]
+      }
+    },
+    "express": {
+      "alias" : "express js",
+      "links": {
+        "devLang": ["js"],
+        "skill": ["mw"]
+      }
+    },
+    "django": {
+      "alias" : "django",
+      "links": {
+        "devLang": ["python"],
+        "skill": ["mw"]
+      }
+    },
+    "mysql": {
+      "alias" : "MySql",
+      "links": {
+        "skill": ["bed"]
+      }
+    },
+    "mongo": {
+      "alias" : "mongo db",
+      "links": {
+        "devLang": ["js"],
+        "skill": ["bed"]
+      }
+    }
+  },
+  "techLinks": {
+    "devLang": {
+      "alias": "Language",
+      "options": {
+        "js": {
+          "alias" : "JS"
+        },
+        "python": {
+          "alias" : "Python"
+        }
+      }
+    },
+    "skill": {
+      "fed": { "alias" :  "Front End Development" },
+      "mw": { "alias" :  "Middleware" },
+      "bed": { "alias" :  "Back End Development" }
+    }
+  }
+}

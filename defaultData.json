@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id": "job1", "alias": "Sample Job", "monthCount" : 25, "typeKey" :  "employer"},
+    {"id": "proj1", "alias": "Sample Project", "monthCount" : 15, "typeKey" :  "project"},
+    {"id": "proj2", "alias": "Project2", "monthCount" : 10, "typeKey" :  "project"},
+    {"id": "tech1", "alias": "sample tech", "monthCount" : 15, "typeKey" :  "tech"},
+    {"id": "tech2", "alias": "other tech", "monthCount" : 10, "typeKey" :  "tech"},
+    {"id": "tech3", "alias": "tech 3", "monthCount" : 15, "typeKey" :  "tech"},
+    {"id": "tl1", "alias": "sample tech link", "monthCount" : 25, "typeKey" :  "techLink:sample"}
+  ],
+  "links": [
+    {"source": "job1", "target": "proj1", "value": 1},
+    {"source": "job1", "target": "proj2", "value": 1},
+    {"source": "proj1", "target": "tech1", "value": 1},
+    {"source": "proj1", "target": "tech3", "value": 1},
+    {"source": "proj2", "target": "tech2", "value": 1},
+    {"source": "tech1", "target": "tl1", "value": 1},
+    {"source": "tech2", "target": "tl1", "value": 1},
+    {"source": "tech3", "target": "tl1", "value": 1}
+  ]
+}
